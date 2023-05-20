@@ -21,7 +21,7 @@
     box-shadow: 1px 3px 5px rgba(0, 0, 0, .15);
     border-radius: 10px;
     padding: 5px;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
   }
   img {
     text-align: center;
@@ -33,12 +33,13 @@
     left: 17%;
     margin-top: 20px;
     bottom: 10px;
+
   }
   .comments {
     position: absolute;
     z-index: 2;
     background-color: #fff;
-    top: 98%;
+    top: 99%;
     left: 0;
     width: 100%;
     .loading {
@@ -50,7 +51,7 @@
     p {
       font-size: 14px;
       background-color: #282c34;
-      color: #fff
+      color: #fff;
     }
   }
 }

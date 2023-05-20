@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {useParams} from "react-router-dom";
+import {NavLink, useParams} from "react-router-dom";
 import {http} from "../../http/http";
 import {IPost} from "../../types/IPost";
 import {Layout} from "../../components/layout/Layout";
@@ -7,6 +7,7 @@ import {Container} from "../../components/container/Container";
 import styles from "./UserPage.module.scss"
 import avatar from "./../../images/avatar.jpg"
 import {PostItem} from "../../components/PostItem/PostItem";
+import {Button} from "react-bootstrap";
 
 export const UserPage = () => {
     const {id} = useParams()
@@ -27,6 +28,9 @@ export const UserPage = () => {
     return (
         <Layout>
             <Container>
+                <NavLink to='/'>
+                    <Button variant="primary">HomePage</Button>{' '}
+                </NavLink>
                 {
                     !loading ?
                         <div>loading...</div>

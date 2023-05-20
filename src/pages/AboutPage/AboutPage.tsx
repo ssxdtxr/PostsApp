@@ -2,11 +2,16 @@ import React from 'react';
 import {Layout} from "../../components/layout/Layout";
 import {Container} from "../../components/container/Container";
 import styles from "./AboutPage.module.scss"
+import {Button} from "react-bootstrap";
+import {NavLink} from "react-router-dom";
 
 export const AboutPage = () => {
     return (
         <Layout>
             <Container>
+                <NavLink to='/'>
+                    <Button variant="primary">HomePage</Button>{' '}
+                </NavLink>
                 <h1>About me</h1>
                 <div className={styles.about}>
                     <div className={styles.introduction}>

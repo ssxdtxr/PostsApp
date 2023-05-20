@@ -47,7 +47,7 @@ export const PostItem: FC<IPostItem> = ({post}) => {
                                 :
                                 comments.map(comment => (
                                     <div className={styles.comment}>
-                                        <h3>{comment.email}</h3>
+                                        <h5>{comment.email}</h5>
                                         <p>{comment.body}</p>
                                     </div>
                                 ))
