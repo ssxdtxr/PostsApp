@@ -1,0 +1,72 @@
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 3px 6px 9px rgba(0, 0, 0, .1);
+  margin-bottom: 50px;
+  h1 {
+    margin: 0 auto;
+  }
+
+  .menu {
+    .closed {
+      cursor: pointer;
+      width: 25px;
+      height: 20px;
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 20px;
+        background-color: black;
+        height: 3px;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 20px;
+        background-color: black;
+        height: 3px;
+      }
+
+      span {
+        position: absolute;
+        top: 8px;
+        width: 20px;
+        background-color: black;
+        height: 3px;
+      }
+    }
+
+
+    .opened {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      cursor: pointer;
+      width: 25px;
+      height: 20px;
+      position: relative;
+      span {
+        position: absolute;
+        width: 25px;
+        height: 2px;
+        background-color: #000;
+        transition: all .4s;
+
+        &:first-child {
+          transform: translateY(0) rotate(-45deg);
+        }
+
+        &:last-child {
+          transform: translateY(0) rotate(45deg);
+        }
+      }
+    }
+  }
+}
