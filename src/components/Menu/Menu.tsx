@@ -8,14 +8,17 @@ export const Menu = () => {
         <div className={styles.menu}>
             <div className={styles.title}>Post Menu</div>
             <ul>
-                <li>
-                    <NavLink to="/" className={({isActive}) => isActive ? styles.active : ''}>
+                <NavLink to="/" className={({isActive}) => isActive ? styles.active : ''}>
+                    <li>
                         Список постов
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="/about" className={({isActive}) => isActive ? styles.active : ''}>Обо мне</NavLink>
-                </li>
+                    </li>
+                </NavLink>
+
+                <NavLink to="/about" className={({isActive}) => isActive ? styles.active : ''}>
+                    <li>
+                        Обо мне
+                    </li>
+                </NavLink>
             </ul>
         </div>
     );
