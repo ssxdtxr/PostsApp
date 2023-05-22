@@ -8,7 +8,7 @@ export const Layout: FC<PropsWithChildren> = ({children}) => {
     return (
         <div className={styles.app}>
             <Helmet>
-                <title>Anime Store</title>
+                <title>Posts App</title>
             </Helmet>
             <Header />
             {children}
