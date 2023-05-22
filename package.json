@@ -2,12 +2,9 @@
   "name": "posts-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ssxdtxr.github.io/PostsApp/",
+  "homepage": "https://ssxdtxr.github.io/postsApp/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.31",
     "@types/react": "^18.2.6",
