@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/PostsApp/static/css/main.71eee17a.css",
-    "main.js": "/PostsApp/static/js/main.b74244c8.js",
-    "static/js/787.c6587e2a.chunk.js": "/PostsApp/static/js/787.c6587e2a.chunk.js",
-    "static/media/avatar.jpg": "/PostsApp/static/media/avatar.f21dbe8fe66dfaad7b35.jpg",
-    "index.html": "/PostsApp/index.html",
-    "main.71eee17a.css.map": "/PostsApp/static/css/main.71eee17a.css.map",
-    "main.b74244c8.js.map": "/PostsApp/static/js/main.b74244c8.js.map",
-    "787.c6587e2a.chunk.js.map": "/PostsApp/static/js/787.c6587e2a.chunk.js.map"
+    "main.css": "/postsApp/static/css/main.4dc35b61.css",
+    "main.js": "/postsApp/static/js/main.25c2e8d4.js",
+    "static/js/787.c6587e2a.chunk.js": "/postsApp/static/js/787.c6587e2a.chunk.js",
+    "static/media/avatar.jpg": "/postsApp/static/media/avatar.f21dbe8fe66dfaad7b35.jpg",
+    "index.html": "/postsApp/index.html",
+    "main.4dc35b61.css.map": "/postsApp/static/css/main.4dc35b61.css.map",
+    "main.25c2e8d4.js.map": "/postsApp/static/js/main.25c2e8d4.js.map",
+    "787.c6587e2a.chunk.js.map": "/postsApp/static/js/787.c6587e2a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.71eee17a.css",
-    "static/js/main.b74244c8.js"
+    "static/css/main.4dc35b61.css",
+    "static/js/main.25c2e8d4.js"
   ]
 }
