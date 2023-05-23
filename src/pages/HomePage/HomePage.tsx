@@ -22,7 +22,7 @@ export const HomePage = () => {
                 <h1>Posts List</h1>
                 <section className={styles.posts}>
                     {
-                        !loading ?
+                        loading ?
                             [...new Array(8)].map((_, index) =>
                                 <div className={styles.postSkeleton} key={index}>
                                     <Skeleton className={styles.postsSkeletonImage}/>
