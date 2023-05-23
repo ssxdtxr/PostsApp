@@ -7,7 +7,7 @@ import {NavLink} from "react-router-dom";
 
 export const AboutPage = () => {
     return (
-        <Layout>
+        <Layout title={'About Page'}>
             <Container>
                 <NavLink to='/'>
                     <Button variant="primary">HomePage</Button>{' '}
