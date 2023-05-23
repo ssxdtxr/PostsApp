@@ -1,7 +1,17 @@
 import React, {useState} from 'react';
 import styles from "./Header.module.scss"
 import {Menu} from "../../Menu/Menu";
+import { motion } from "framer-motion"
 
+
+const menuVariants = {
+    visible: {
+        opacity: 1
+    },
+    hidden: {
+        opacity: 0
+    }
+}
 
 export const Header = () => {
     const [hamburgerOpen, setHamburgerOpen] = useState<boolean>(false)
@@ -27,7 +37,14 @@ export const Header = () => {
             </div>
             <h1>Posts App</h1>
             {
-                hamburgerOpen ? <Menu/> : ''
+                hamburgerOpen &&
+                    <motion.div
+                        initial='hidden'
+                        animate='visible'
+                        variants={menuVariants}
+                    >
+                        <Menu/>
+                    </motion.div>
             }
         </div>
     );
