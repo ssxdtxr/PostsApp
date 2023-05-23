@@ -8,6 +8,8 @@ import {Link} from "react-router-dom";
 import {Button} from "react-bootstrap";
 import {Skeleton} from "../ui/Skeleton/Skeleton";
 import {CommentItem} from "../CommentItem/CommentItem";
+import {useAppDispatch, useAppSelector} from "../../hooks/useTypedSelector";
+import {fetchPostComments} from "../../store/slices/postComments.slice";
 
 interface IPostItem {
     post: IPost
@@ -16,23 +18,20 @@ interface IPostItem {
 export const PostItem: FC<IPostItem> = ({post}) => {
     const [open, setOpen] = useState<boolean>(false)
     const [loading, setLoading] = useState<boolean>(false)
-    const [comments, setComments] = useState<IComment[]>([])
+    const {comments} = useAppSelector(state => state.postComments)
+    const dispatch = useAppDispatch()
     const {body, title} = post
-
-    const load = () => setTimeout(() => setLoading(false), 500)
 
     const getComments = async () => {
         setOpen(!open)
         setLoading(true)
-        const {data: response} = await http.get(`/comments/`, {params: {postId: post.id}})
-        load()
-        setComments(response)
+        dispatch(fetchPostComments(post.id))
+        setTimeout(() => {setLoading(false)}, 500)
     }
-
 
     return (
         <article className={styles.post}>
-            <Link to={`/posts/user/${post.userId}`}>
+            <Link to={`posts/user/${post.userId}`}>
                 <div className={styles.img}>
                     <img src={avatar} alt="avatar"/>
                 </div>

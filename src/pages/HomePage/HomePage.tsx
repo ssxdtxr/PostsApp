@@ -8,11 +8,11 @@ import {fetchPosts} from "../../store/slices/posts.slice"
 import {useAppDispatch, useAppSelector} from "../../hooks/useTypedSelector";
 
 export const HomePage = () => {
-    // const [postsdsa, setPostss] = useState<IPost[]>([])
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
     const {posts} = useAppSelector(state => state.posts)
     const dispatch = useAppDispatch()
     useEffect(() => {
+        setLoading(true)
         dispatch(fetchPosts())
         setTimeout(() => {setLoading(false)}, 500)
     }, [])
@@ -22,7 +22,7 @@ export const HomePage = () => {
                 <h1>Posts List</h1>
                 <section className={styles.posts}>
                     {
-                        loading ?
+                        !loading ?
                             [...new Array(8)].map((_, index) =>
                                 <div className={styles.postSkeleton} key={index}>
                                     <Skeleton className={styles.postsSkeletonImage}/>

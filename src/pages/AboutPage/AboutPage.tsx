@@ -59,6 +59,20 @@ export const AboutPage = () => {
                                 href="https://github.com/ssxdtxr">https://github.com/ssxdtxr</a>)
                             </p>
                         </div>
+                        <div>
+                            <h2>Обратная связь:</h2>
+                            <ul>
+                                <li>
+                                    VK: <a href="https://vk.com/e.ter67">https://vk.com/e.ter67</a>
+                                </li>
+                                <li>
+                                    Gmail:
+                                </li>
+                                <li>
+
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </Container>

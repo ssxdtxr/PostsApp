@@ -4,3 +4,25 @@
   gap: 20px;
   box-shadow: 1px 3px 5px rgba(0, 0, 0, .15);
 }
+
+.postSkeleton {
+  display: flex;
+  flex-direction: column;
+  .postsSkeletonImage {
+    height: 290px;
+    margin-bottom: 10px;
+  }
+  .postsSkeletonTitle {
+    height: 64px;
+    margin-bottom: 10px;
+  }
+  .postsSkeletonBody {
+    height: 144px;
+    margin-bottom: 36px;
+  }
+  .postsSkeletonButton {
+    margin: 0 auto;
+    height: 20px;
+    width: 200px;
+  }
+}
