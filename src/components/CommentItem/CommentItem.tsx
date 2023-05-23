@@ -11,7 +11,7 @@ export const CommentItem: FC<ICommentItem> = ({comment}) => {
     }
     return (
         <article className={styles.comment} key={comment.id}>
-            <h5>{comment.email}</h5>
+            <div className={styles.title}>{comment.email}</div>
             <div className={toggle ? styles.activeData : styles.comment__data} onClick={toggleFullComment}>
                 <p>{comment.body}</p>
             </div>

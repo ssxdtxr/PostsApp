@@ -9,22 +9,22 @@ import {PostItem} from "../../components/PostItem/PostItem";
 import {Button} from "react-bootstrap";
 import {useAppDispatch, useAppSelector} from "../../hooks/useTypedSelector";
 import {fetchUserPost} from "../../store/slices/userPost.slice";
+import {Skeleton} from "../../components/ui/Skeleton/Skeleton";
 
 export const UserPage = () => {
     const {id} = useParams()
-    const [loading, setLoading] = useState<boolean>(true)
+    const [loading, setLoading] = useState<boolean>(false)
     const [posts, setPosts] = useState<IPost[]>([])
     const {userPosts} = useAppSelector(state => state.userPosts)
     const dispatch = useAppDispatch()
 
     useEffect(() => {
+        setLoading(true)
         if (id != null) {
             dispatch(fetchUserPost(id))
-            console.log(userPosts)
             setTimeout(() => {setLoading(false)}, 500)
             setPosts(userPosts)
         }
-
     }, [])
     return (
         <Layout title={`User Id: ${id}`}>
@@ -35,7 +35,14 @@ export const UserPage = () => {
                 <h1>Post UserID: {posts[0].userId}</h1>
                 {
                     loading ?
-                        <div>loading...</div>
+                        [...new Array(8)].map((_, index) =>
+                            <div className={styles.postSkeleton} key={index}>
+                                <Skeleton className={styles.postsSkeletonImage}/>
+                                <Skeleton className={styles.postsSkeletonTitle}/>
+                                <Skeleton className={styles.postsSkeletonBody}/>
+                                <Skeleton className={styles.postsSkeletonButton}/>
+                            </div>
+                        )
                         :
                         posts &&
                         <>
