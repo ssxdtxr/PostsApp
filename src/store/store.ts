@@ -1,16 +1,13 @@
 import {configureStore} from "@reduxjs/toolkit";
-import createSagaMiddleWare from 'redux-saga'
-import PostsReducer from "./slices/posts.slice";
-import rootSaga from "./saga/root.saga";
+import postsSlice from "./slices/posts.slice";
+import userPostSlice from "./slices/userPost.slice";
 
-const sagaMiddleware = createSagaMiddleWare()
 const store = configureStore({
     reducer: {
-        posts: PostsReducer
+        posts: postsSlice,
+        userPosts: userPostSlice
     },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware)
 })
-sagaMiddleware.run(rootSaga)
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
 

@@ -3,12 +3,11 @@ import styles from "./Layout.module.scss"
 import {Header} from "./header/Header";
 import {Footer} from "./footer/Footer";
 import Helmet from "react-helmet"
-import {Outlet} from "react-router-dom";
-export const Layout: FC<PropsWithChildren> = ({children}) => {
+export const Layout: FC<PropsWithChildren & {title: string}> = ({children, title}) => {
     return (
         <div className={styles.app}>
             <Helmet>
-                <title>Posts App</title>
+                <title>{title}</title>
             </Helmet>
             <Header />
             {children}

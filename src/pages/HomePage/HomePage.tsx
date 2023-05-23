@@ -1,30 +1,23 @@
 import React, {Fragment, useEffect, useState} from 'react';
 import {Layout} from "../../components/layout/Layout";
 import {Container} from "../../components/container/Container";
-import {IPost} from "../../types/IPost";
 import {PostItem} from "../../components/PostItem/PostItem";
 import styles from "./HomePage.module.scss"
 import {Skeleton} from "../../components/ui/Skeleton/Skeleton";
-import {useDispatch, useSelector} from "react-redux";
-import {getPosts} from "../../store/slices/posts.slice"
+import {fetchPosts} from "../../store/slices/posts.slice"
+import {useAppDispatch, useAppSelector} from "../../hooks/useTypedSelector";
 
 export const HomePage = () => {
-    const [posts, setPostss] = useState<IPost[]>([])
+    // const [postsdsa, setPostss] = useState<IPost[]>([])
     const [loading, setLoading] = useState(true)
-    // const {} = useSelector(state => state)
-    const dispatch = useDispatch()
-    // const getPosts = async () => {
-    //     const {data: response} = await http.get<IPost[]>('/posts')
-    //     setPosts(response)
-    //     setLoading(false)
-    // }
+    const {posts} = useAppSelector(state => state.posts)
+    const dispatch = useAppDispatch()
     useEffect(() => {
-        dispatch(getPosts())
-        setLoading(false)
-        // console.log(postsList)
+        dispatch(fetchPosts())
+        setTimeout(() => {setLoading(false)}, 500)
     }, [])
     return (
-        <Layout>
+        <Layout title={"Posts App"}>
             <Container>
                 <h1>Posts List</h1>
                 <section className={styles.posts}>
@@ -39,10 +32,13 @@ export const HomePage = () => {
                                 </div>
                             )
                             :
-                            posts && posts.map(post => <PostItem post={post} key={post.id}/>)
+                            <>
+                                {
+                                    posts && posts.map(post => <PostItem post={post} key={post.id}/>)
+                                }
+                            </>
                     }
                 </section>
-
             </Container>
         </Layout>
     );
