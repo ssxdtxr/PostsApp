@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect, useState} from 'react';
+import React, { useEffect, useState} from 'react';
 import {Layout} from "../../components/layout/Layout";
 import {Container} from "../../components/container/Container";
 import {PostItem} from "../../components/PostItem/PostItem";
