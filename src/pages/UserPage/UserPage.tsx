@@ -1,14 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {NavLink, useParams} from "react-router-dom";
-import {http} from "../../http/http";
-import {IPost} from "../../types/IPost";
+import { NavLink, useParams} from "react-router-dom";
 import {Layout} from "../../components/layout/Layout";
 import {Container} from "../../components/container/Container";
 import styles from "./UserPage.module.scss"
 import {PostItem} from "../../components/PostItem/PostItem";
 import {Button} from "react-bootstrap";
 import {useAppDispatch, useAppSelector} from "../../hooks/useTypedSelector";
-import {fetchUserPost} from "../../store/slices/userPost.slice";
+import {fetchUserPost} from "../../store/slices/userPosts.slice";
 import {Skeleton} from "../../components/ui/Skeleton/Skeleton";
 
 export const UserPage = () => {

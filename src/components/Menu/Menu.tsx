@@ -1,24 +1,27 @@
 import React, {FC} from 'react';
 import styles from "./Menu.module.scss"
-import cn from "classnames";
 import {NavLink} from "react-router-dom";
+import {links} from "../ui/Links";
 
-export const Menu = () => {
+interface IMenu {
+    toogleHamburger: () => void
+}
+
+export const Menu: FC<IMenu> = ({toogleHamburger}) => {
     return (
         <div className={styles.menu}>
             <div className={styles.title}>Post Menu</div>
             <ul>
-                <NavLink to="/" className={({isActive}) => isActive ? styles.active : ''}>
-                    <li>
-                        Список постов
-                    </li>
-                </NavLink>
-
-                <NavLink to="/about" className={({isActive}) => isActive ? styles.active : ''}>
-                    <li>
-                        Обо мне
-                    </li>
-                </NavLink>
+                {
+                    links.map(link => (
+                        <NavLink onClick={() => toogleHamburger()} to={link.link}
+                                 className={({isActive}) => isActive ? styles.active : ''}>
+                            <li>
+                                {link.name}
+                            </li>
+                        </NavLink>
+                    ))
+                }
             </ul>
         </div>
     );

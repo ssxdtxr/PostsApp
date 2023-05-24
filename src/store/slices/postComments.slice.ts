@@ -2,7 +2,7 @@ import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {IComment} from "../../types/IComment";
 import {http} from "../../http/http";
 import {IPost} from "../../types/IPost";
-import {fetchUserPost} from "./userPost.slice";
+import {fetchUserPost} from "./userPosts.slice";
 
 interface IPostComments {
     comments: IComment[]

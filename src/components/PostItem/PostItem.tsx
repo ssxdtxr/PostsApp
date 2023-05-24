@@ -2,9 +2,7 @@ import React, {FC, Fragment, useRef, useState} from 'react';
 import {IPost} from "../../types/IPost";
 import avatar from "./../../images/avatar.jpg"
 import styles from "./PostItem.module.scss"
-import {http} from "../../http/http";
-import {IComment} from "../../types/IComment";
-import {Link} from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import {Button} from "react-bootstrap";
 import {Skeleton} from "../ui/Skeleton/Skeleton";
 import {CommentItem} from "../CommentItem/CommentItem";
@@ -31,13 +29,15 @@ export const PostItem: FC<IPostItem> = ({post}) => {
 
     return (
         <article className={styles.post}>
-            <Link to={`posts/user/${post.userId}`}>
+            <NavLink to={`/posts/user/${post.userId}`}>
                 <div className={styles.img}>
                     <img src={avatar} alt="avatar"/>
                 </div>
-            </Link>
+            </NavLink>
             <div className={styles.post__data}>
-                <p className={styles.title}>{title}</p>
+                <NavLink to={`/posts/user/${post.userId}`}>
+                    <div className={styles.title}>{title}</div>
+                </NavLink>
                 <p className={styles.text}>{body}</p>
                 <Button variant="primary" onClick={() => getComments()}>Comments</Button>{' '}
             </div>

@@ -17,7 +17,7 @@ export const fetchUserPost = createAsyncThunk<IPost[], string>(
     }
 )
 
-const userPostSlice = createSlice({
+const userPostsSlice = createSlice({
     name: 'userPost',
     initialState,
     reducers: {},
@@ -28,4 +28,4 @@ const userPostSlice = createSlice({
     }
 })
 
-export default userPostSlice.reducer
+export default userPostsSlice.reducer

@@ -2,16 +2,7 @@ import React, {useState} from 'react';
 import styles from "./Header.module.scss"
 import {Menu} from "../../Menu/Menu";
 import { motion } from "framer-motion"
-
-
-const menuVariants = {
-    visible: {
-        opacity: 1
-    },
-    hidden: {
-        opacity: 0,
-    }
-}
+import { NavLink} from "react-router-dom";
 
 export const Header = () => {
     const [hamburgerOpen, setHamburgerOpen] = useState<boolean>(false)
@@ -24,7 +15,7 @@ export const Header = () => {
         <div className={styles.header}>
             <div className={styles.menu} onClick={toogleHamburger}>
                 {
-                    hamburgerOpen ?
+                    !hamburgerOpen ?
                         <div className={styles.closed}>
                             <span></span>
                         </div>
@@ -35,16 +26,11 @@ export const Header = () => {
                         </div>
                 }
             </div>
-            <h1>Posts App</h1>
+            <NavLink className={styles.mainLink} to="/">
+                <h1>Posts App</h1>
+            </NavLink>
             {
-                hamburgerOpen &&
-                    <motion.div
-                        initial='hidden'
-                        animate='visible'
-                        variants={menuVariants}
-                    >
-                        <Menu/>
-                    </motion.div>
+                hamburgerOpen && <Menu toogleHamburger={toogleHamburger}/>
             }
         </div>
     );
