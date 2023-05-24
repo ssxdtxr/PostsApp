@@ -9,7 +9,7 @@ const menuVariants = {
         opacity: 1
     },
     hidden: {
-        opacity: 0
+        opacity: 0,
     }
 }
 
