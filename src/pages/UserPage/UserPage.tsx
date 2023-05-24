@@ -13,18 +13,18 @@ import {Skeleton} from "../../components/ui/Skeleton/Skeleton";
 
 export const UserPage = () => {
     const {id} = useParams()
+    console.log(id)
     const [loading, setLoading] = useState<boolean>(false)
-    const [posts, setPosts] = useState<IPost[]>([])
     const {userPosts} = useAppSelector(state => state.userPosts)
     const dispatch = useAppDispatch()
 
     useEffect(() => {
         setLoading(true)
-        if (id != null) {
-            dispatch(fetchUserPost(id))
-            setTimeout(() => {setLoading(false)}, 500)
-            setPosts(userPosts)
-        }
+        dispatch(fetchUserPost(id as string))
+        console.log(userPosts)
+        setTimeout(() => {
+            setLoading(false)
+        }, 500)
     }, [])
     return (
         <Layout title={`User Id: ${id}`}>
@@ -32,7 +32,7 @@ export const UserPage = () => {
                 <NavLink to='/'>
                     <Button variant="primary">HomePage</Button>{' '}
                 </NavLink>
-                <h1>Post UserID: {posts[0].userId}</h1>
+                <h1>Post UserID: {id}</h1>
                 {
                     loading ?
                         [...new Array(8)].map((_, index) =>
@@ -44,16 +44,12 @@ export const UserPage = () => {
                             </div>
                         )
                         :
-                        posts &&
-                        <>
-                            <div>
-                                <div className={styles.user}>
-                                    {
-                                        posts.map(post => <PostItem post={post}/>)
-                                    }
-                                </div>
-                            </div>
-                        </>
+                        userPosts &&
+                        <div className={styles.user}>
+                            {
+                                userPosts.map(post => <PostItem post={post}/>)
+                            }
+                        </div>
                 }
             </Container>
         </Layout>

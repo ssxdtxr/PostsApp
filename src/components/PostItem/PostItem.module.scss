@@ -10,6 +10,13 @@
     display: grid;
     grid-template-rows: 1fr 2fr 1fr;
     height: 100%;
+    button {
+      text-align: center ;
+      width: 200px;
+      height: 40px;
+      margin: 50px auto 0;
+      bottom: 10px;
+    }
   }
   .img {
     width: 100%;
@@ -38,15 +45,7 @@
   img {
     text-align: center;
   }
-  button {
-    position: absolute;
-    width: 200px;
-    text-align: center;
-    left: 17%;
-    margin-top: 20px;
-    bottom: 10px;
 
-  }
   .comments {
     position: absolute;
     z-index: 2;

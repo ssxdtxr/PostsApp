@@ -15,13 +15,13 @@ export const AboutPage = () => {
                 <h1>About me</h1>
                 <div className={styles.about}>
                     <div className={styles.introduction}>
-                        <h2>Привет, меня зовут Егор!</h2>
+                        <div className={styles.title}>Привет, меня зовут Егор!</div>
                         <p>Я работоспособный, ответственный, любящий делать красоту во frontend'е javascript
                             разработчик)</p>
                     </div>
                     <div className={styles.main}>
                         <div>
-                            <h2>Обо мне:</h2>
+                            <div className={styles.title}>Обо мне:</div>
                             <p>
                                 Опыт разработки на javascript: 6 месяцев;
                                 Опыт разработки на react: 4 месяца
@@ -30,7 +30,7 @@ export const AboutPage = () => {
                             </p>
                         </div>
                         <div>
-                            <h2>Основной стек:</h2>
+                            <div className={styles.title}>Основной стек:</div>
                             <p>
                                 -Языки программирования: JavaScript, TypeScript;
                                 -Вёрстка: HTML5, CSS3, SCSS, SCSS modules(адаптивная верстка, кроссбраузерная верстка,
@@ -42,7 +42,7 @@ export const AboutPage = () => {
                             </p>
                         </div>
                         <div>
-                            <h2>Работа в команде:</h2>
+                            <div className={styles.title}>Работа в команде:</div>
                             <p>
                                 -Контроль версий: Git, CI/CD, Git Flow;
                                 -Работа с дизайнерами: FIgma;
@@ -51,7 +51,7 @@ export const AboutPage = () => {
                             </p>
                         </div>
                         <div>
-                            <h2>Проекты:</h2>
+                            <div className={styles.title}>Проекты:</div>
                             <p>
                                 -Лендинг компании: <a href="https://ssxdtxr.github.io/Belka/">https://ssxdtxr.github.io/Belka/</a>
                                 -React-typescript-todo: <a href="https://ssxdtxr.github.io/TodoReact/">https://ssxdtxr.github.io/TodoReact/</a> 
@@ -59,18 +59,13 @@ export const AboutPage = () => {
                                 href="https://github.com/ssxdtxr">https://github.com/ssxdtxr</a>)
                             </p>
                         </div>
-                        <div>
-                            <h2>Обратная связь:</h2>
+                        <div className={styles.feedback}>
+                            <div className={styles.title}>Обратная связь:</div>
                             <ul>
                                 <li>
                                     VK: <a href="https://vk.com/e.ter67">https://vk.com/e.ter67</a>
                                 </li>
-                                <li>
-                                    Gmail:
-                                </li>
-                                <li>
 
-                                </li>
                             </ul>
                         </div>
                     </div>

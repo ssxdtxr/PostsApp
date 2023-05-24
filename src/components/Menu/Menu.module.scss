@@ -1,18 +1,21 @@
 .menu {
   position: fixed;
-  width: 24%;
+  width: 300px;
   height: 100vh;
   background-color: #000;
   color: #fff;
   left: 0;
-  top: 79px;
-  z-index: 2;
+  top: 88px;
+  z-index: 3;
 
   .title {
     font-size: 30px;
     border-bottom: 2px solid #fff;
     text-align: center;
-    padding: 10px;
+    padding: 10px;  
+    @media screen and (max-width: 400px) {
+      font-size: 20px;
+    }
   }
 
   ul {
@@ -40,7 +43,10 @@
       &:active {
         background-color: #282c34;
       }
-
+      @media screen and (max-width: 400px) {
+        font-size: 16px;
+        width: 200px;
+      }
     }
   }
 }
